@@ -3,27 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Germán Rodríguez | Ing. Procesos, Data Scientist & ML Engineer</title>
+    <title>Germán Rodríguez | Data Scientist & ML Engineer | Portfolio 2025</title>
     <link rel="icon" href="favicon.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #0366d6;
-            --secondary-color: #2ea44f;
-            --dark-color: #121212;
-            --header-color: #1a1e22;
-            --footer-color: #1a1e22;
-            --light-color: #f0f2f5;
-            --danger-color: #d73a49;
-            --text-color: #e6e6e6;
-            --dark-text: #222;
-            --gray-color: #aaa;
-            --light-gray: #ddd;
-            --card-bg: #2d333b;
-            --tag-bg: #1e252e;
-            --hover-color: #3a86ff;
-            --section-bg: #21262d;
-            --section-alt-bg: #161b22;
+            --primary-color: #3B82F6;
+            --secondary-color: #1E40AF;
+            --accent-color: #F59E0B;
+            --dark-bg: #0F172A;
+            --card-bg: #1E293B;
+            --light-bg: #F8FAFC;
+            --text-primary: #E2E8F0;
+            --text-secondary: #94A3B8;
+            --border-color: #334155;
+            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            --shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 10px 10px -5px rgb(0 0 0 / 0.04);
         }
 
         * {
@@ -33,523 +31,894 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--dark-color);
+            color: var(--text-primary);
+            background: var(--dark-bg);
+            overflow-x: hidden;
         }
 
-        a {
-            color: var(--primary-color);
-            text-decoration: none;
-            transition: color 0.3s ease;
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
         }
 
-        a:hover {
-            color: var(--hover-color);
-            text-decoration: none;
+        ::-webkit-scrollbar-track {
+            background: var(--dark-bg);
         }
 
-        h1, h2, h3 {
-            margin-bottom: 1rem;
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 4px;
         }
 
-        p {
-            margin-bottom: 1rem;
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
         }
 
-        .container {
-            max-width: 1100px;
+        .nav-container {
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
-        }
-
-        /* Header */
-        header {
-            background-color: var(--header-color);
-            color: white;
-            padding: 2rem 0;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-        }
-
-        .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .header-content img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border: 3px solid var(--primary-color);
-            box-shadow: 0 0 20px rgba(3, 102, 214, 0.3);
-        }
-
-        .header-text h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-        }
-
-        .header-text h2 {
+        .logo {
             font-size: 1.5rem;
-            font-weight: normal;
-            margin-bottom: 1rem;
-            color: var(--gray-color);
-        }
-
-        .social-links a {
-            color: white;
-            margin-right: 1rem;
-            font-size: 1.5rem;
-            transition: all 0.3s ease;
-        }
-
-        .social-links a:hover {
+            font-weight: 700;
             color: var(--primary-color);
-            transform: translateY(-3px);
         }
 
-        /* About */
-        .about {
-            padding: 3rem 0;
-            background-color: var(--section-bg);
-            color: var(--text-color);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-1);
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            background: var(--primary-color);
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary-color), #8B5CF6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-text .subtitle {
+            font-size: 1.5rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .typing-text {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            margin-bottom: 2rem;
+            min-height: 2rem;
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .profile-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: var(--shadow-lg);
+            text-align: center;
+            border: 1px solid var(--border-color);
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 4px solid var(--primary-color);
+            margin-bottom: 1rem;
+            object-fit: cover;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--gradient-1);
+            color: white;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
         }
 
         .section-title {
-            position: relative;
-            display: inline-block;
-            margin-bottom: 2rem;
-            color: white;
-            font-size: 1.8rem;
+            text-align: center;
+            margin-bottom: 3rem;
         }
 
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 60px;
-            height: 3px;
-            background-color: var(--primary-color);
-        }
-
-        /* Skills */
-        .skills {
-            padding: 3rem 0;
-            background-color: var(--section-alt-bg);
-        }
-
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-        }
-
-        .skill-category {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .skill-category h3 {
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
             margin-bottom: 1rem;
-            color: white;
-            border-bottom: 1px solid var(--primary-color);
-            padding-bottom: 0.5rem;
+            color: var(--text-primary);
         }
 
-        .skill-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.8rem;
-            list-style: none;
+        .section-title p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
         }
 
-        .skill-item {
-            background-color: var(--card-bg);
-            padding: 0.6rem 1.2rem;
-            border-radius: 4px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            display: flex;
+        /* About Section */
+        .about {
+            background: var(--card-bg);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
             align-items: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .skill-item:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        .about-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
         }
 
-        .skill-item i {
-            margin-right: 0.5rem;
+        .stat-card {
+            background: var(--dark-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
             color: var(--primary-color);
         }
 
-        /* Projects */
+        .stat-label {
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid var(--border-color);
+        }
+
+        .skill-category h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .skill-tag {
+            background: var(--dark-bg);
+            color: var(--text-primary);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Projects Section */
         .projects {
-            padding: 3rem 0;
-            background-color: var(--section-bg);
+            background: var(--card-bg);
+        }
+
+        .projects-filter {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .filter-btn {
+            background: transparent;
+            color: var(--text-secondary);
+            border: 1px solid var(--border-color);
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
         }
 
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
         }
 
         .project-card {
-            background-color: var(--card-bg);
-            border-radius: 8px;
+            background: var(--dark-bg);
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            position: relative;
         }
 
         .project-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .project-status {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--accent-color);
+            color: var(--dark-bg);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 2;
         }
 
         .project-image {
-            height: 150px;
-            background-color: var(--primary-color);
+            height: 200px;
+            background: var(--gradient-1);
             display: flex;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
             color: white;
             font-size: 3rem;
+            position: relative;
         }
 
         .project-content {
-            padding: 1.5rem;
+            padding: 2rem;
         }
 
         .project-title {
-            font-size: 1.25rem;
-            margin-bottom: 0.5rem;
-            color: white;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .project-description {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
         }
 
         .project-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
-            margin: 1rem 0;
+            margin-bottom: 1.5rem;
         }
 
         .project-tag {
-            background-color: var(--tag-bg);
-            padding: 0.25rem 0.6rem;
-            border-radius: 4px;
+            background: var(--card-bg);
+            color: var(--text-secondary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
             font-size: 0.8rem;
-            color: var(--gray-color);
+            border: 1px solid var(--border-color);
         }
 
         .project-links {
             display: flex;
             gap: 1rem;
-            margin-top: 1rem;
         }
 
         .project-link {
-            display: inline-block;
-            padding: 0.6rem 1.2rem;
-            border-radius: 4px;
-            color: white;
-            background-color: var(--primary-color);
-            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
             font-weight: 500;
+            transition: color 0.3s ease;
         }
 
         .project-link:hover {
-            background-color: var(--hover-color);
-            box-shadow: 0 4px 12px rgba(3, 102, 214, 0.4);
-            color: white;
+            color: var(--accent-color);
         }
 
-        /* Contact */
-        .contact {
-            padding: 3rem 0;
-            background-color: var(--section-alt-bg);
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
         }
 
         .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
         }
 
         .contact-item {
             display: flex;
             align-items: center;
             gap: 1rem;
-            transition: transform 0.3s ease;
+            margin-bottom: 2rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: all 0.3s ease;
         }
 
         .contact-item:hover {
-            transform: translateX(5px);
+            color: var(--primary-color);
+            transform: translateX(10px);
         }
 
         .contact-item i {
-            font-size: 1.5rem;
-            color: var(--primary-color);
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
         }
 
-        .contact-item a {
-            color: var(--text-color);
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
         }
 
-        .contact-item a:hover {
+        .social-link {
+            width: 50px;
+            height: 50px;
+            background: var(--card-bg);
             color: var(--primary-color);
+            border: 1px solid var(--border-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
         }
 
         /* Footer */
         footer {
-            background-color: var(--footer-color);
-            color: var(--gray-color);
-            padding: 2rem 0;
+            background: var(--dark-bg);
+            padding: 3rem 0;
+            border-top: 1px solid var(--border-color);
             text-align: center;
-            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.2);
+            color: var(--text-secondary);
         }
 
         /* Responsive */
         @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
+            .hero-content {
+                grid-template-columns: 1fr;
                 text-align: center;
             }
 
-            .header-content img {
-                margin-bottom: 1.5rem;
+            .hero-text h1 {
+                font-size: 2.5rem;
             }
 
-            .social-links {
-                margin-top: 1rem;
+            .nav-links {
+                display: none;
+            }
+
+            .about-content,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
             }
 
             .projects-grid {
                 grid-template-columns: 1fr;
             }
         }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        /* Status badges colors */
+        .status-new { background: #EF4444; }
+        .status-recent { background: #10B981; }
+        .status-updated { background: #3B82F6; }
+        .status-active { background: #8B5CF6; }
     </style>
 </head>
 <body>
-    <!-- Header Section -->
-    <header>
-        <div class="container header-content">
-            <img src="https://avatars.githubusercontent.com/u/63882939?v=4" alt="Germán Rodríguez">
-            <div class="header-text">
-                <h1>Germán Alonso Rodríguez Díaz</h1>
-                <h2>Ing. Procesos, Data Scientist & ML Engineer</h2>
-                <div class="social-links">
-                    <a href="https://linkedin.com/in/germandsp" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/ingermanr" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://kaggle.com/germanrodriguezdiaz" target="_blank"><i class="fab fa-kaggle"></i></a>
-                    <a href="mailto:ingenierogermanr@gmail.com"><i class="fas fa-envelope"></i></a>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">GR</div>
+            <ul class="nav-links">
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#about">Sobre Mí</a></li>
+                <li><a href="#skills">Habilidades</a></li>
+                <li><a href="#projects">Proyectos</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="particles"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Germán Alonso Rodríguez</h1>
+                <p class="subtitle">Data Scientist & ML Engineer</p>
+                <div class="typing-text" id="typing-text"></div>
+                <p>Transformando datos en insights accionables y desarrollando soluciones ML escalables desde Medellín, Colombia 🇨🇴</p>
+                <div class="cta-buttons">
+                    <a href="#projects" class="btn btn-primary">
+                        <i class="fas fa-rocket"></i>
+                        Ver Proyectos
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <i class="fas fa-envelope"></i>
+                        Contáctame
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="profile-card">
+                    <img src="https://avatars.githubusercontent.com/u/63882939?v=4" alt="Germán Rodríguez" class="profile-img">
+                    <h3>Data Scientist</h3>
+                    <p>Especialista en MLOps & Analytics</p>
+                    <div class="social-links">
+                        <a href="https://linkedin.com/in/germanalonsodriguez" target="_blank" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/ingermanr" target="_blank" class="social-link">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://kaggle.com/germanrodriguezdiaz" target="_blank" class="social-link">
+                            <i class="fab fa-kaggle"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
-    </header>
+    </section>
 
     <!-- About Section -->
-    <section class="about">
+    <section id="about" class="about">
         <div class="container">
-            <h2 class="section-title">Sobre mí</h2>
-            <p>
-                Ingeniero Industrial con especialización en Estadística Aplicada y Machine Learning, con más de 10 años de 
-                experiencia transformando procesos empresariales mediante ingeniería de procesos y análisis avanzado de datos. 
-                Experto en la implementación de soluciones basadas en datos que optimizan operaciones, reducen costos y 
-                aumentan la productividad. Combino metodologías Lean Six Sigma con tecnologías de analítica avanzada para 
-                desarrollar modelos predictivos que generan valor medible para las organizaciones. 
-                Disfruto trabajando en proyectos desafiantes que involucran ingeniería de procesos, análisis de datos, modelado predictivo y 
-                automatización de procesos.
-            </p>
-            <p>
-                Mi enfoque actual es en el aprendizaje automático y MLOps, con un interés particular en la implementación 
-                de soluciones de extremo a extremo que abarcan desde la ingeniería de datos hasta el despliegue de modelos 
-                en producción.
-            </p>
+            <div class="section-title">
+                <h2>Sobre Mí</h2>
+                <p>Ingeniero Industrial especializado en Data Science y Machine Learning</p>
+            </div>
+            <div class="about-content">
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-label">Años de Experiencia</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">53</div>
+                        <div class="stat-label">Repositorios GitHub</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">5+</div>
+                        <div class="stat-label">Proyectos MLOps</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">2025</div>
+                        <div class="stat-label">Proyectos Activos</div>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <p>Soy un <strong>Ingeniero Industrial</strong> con especialización en <strong>Estadística Aplicada y Machine Learning</strong>, con más de 10 años de experiencia transformando procesos empresariales mediante ingeniería de procesos y análisis avanzado de datos.</p>
+                    
+                    <p>Experto en la implementación de <strong>soluciones basadas en datos</strong> que optimizan operaciones, reducen costos y aumentan la productividad. Combino metodologías Lean Six Sigma con tecnologías de analítica avanzada para desarrollar modelos predictivos que generan valor medible para las organizaciones.</p>
+                    
+                    <p>Mi enfoque actual está en el <strong>aprendizaje automático y MLOps</strong>, con un interés particular en la implementación de soluciones de extremo a extremo que abarcan desde la ingeniería de datos hasta el despliegue de modelos en producción.</p>
+                    
+                    <p><strong>Especialidades:</strong> Análisis Demográfico, Sistemas de Detección de Fraude, MLOps, Automatización de Procesos, y Desarrollo de Pipelines de ML.</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Skills Section -->
-    <section class="skills">
+    <section id="skills">
         <div class="container">
-            <h2 class="section-title">Habilidades</h2>
-            <div class="skills-container">
+            <div class="section-title">
+                <h2>Habilidades Técnicas</h2>
+                <p>Tecnologías y herramientas que domino para crear soluciones innovadoras</p>
+            </div>
+            <div class="skills-grid">
                 <div class="skill-category">
-                    <h3>Lenguajes de Programación</h3>
-                    <ul class="skill-list">
-                        <li class="skill-item"><i class="fab fa-python"></i> Python</li>
-                        <li class="skill-item"><i class="fab fa-r-project"></i> R</li>
-                        <li class="skill-item"><i class="fas fa-database"></i> SQL</li>
-                    </ul>
+                    <h3><i class="fas fa-code"></i> Lenguajes de Programación</h3>
+                    <div class="skill-items">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">R</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">HTML/CSS</span>
+                    </div>
                 </div>
                 <div class="skill-category">
-                    <h3>Data Science & ML</h3>
-                    <ul class="skill-list">
-                        <li class="skill-item"><i class="fas fa-brain"></i> Scikit-learn</li>
-                        <li class="skill-item"><i class="fas fa-chart-line"></i> Pandas</li>
-                        <li class="skill-item"><i class="fas fa-chart-bar"></i> NumPy</li>
-                        <li class="skill-item"><i class="fas fa-project-diagram"></i> TensorFlow</li>
-                        <li class="skill-item"><i class="fas fa-fire"></i> PyTorch</li>
-                    </ul>
+                    <h3><i class="fas fa-brain"></i> Machine Learning & AI</h3>
+                    <div class="skill-items">
+                        <span class="skill-tag">Scikit-learn</span>
+                        <span class="skill-tag">TensorFlow</span>
+                        <span class="skill-tag">PyTorch</span>
+                        <span class="skill-tag">Keras</span>
+                        <span class="skill-tag">MLflow</span>
+                        <span class="skill-tag">OpenCV</span>
+                    </div>
                 </div>
                 <div class="skill-category">
-                    <h3>Bases de Datos</h3>
-                    <ul class="skill-list">
-                        <li class="skill-item"><i class="fas fa-server"></i> SQL Server</li>
-                        <li class="skill-item"><i class="fas fa-database"></i> MySQL</li>
-                        <li class="skill-item"><i class="fas fa-database"></i> PostgreSQL</li>
-                    </ul>
+                    <h3><i class="fas fa-chart-line"></i> Análisis de Datos</h3>
+                    <div class="skill-items">
+                        <span class="skill-tag">Pandas</span>
+                        <span class="skill-tag">NumPy</span>
+                        <span class="skill-tag">Matplotlib</span>
+                        <span class="skill-tag">Seaborn</span>
+                        <span class="skill-tag">Plotly</span>
+                        <span class="skill-tag">Power BI</span>
+                    </div>
                 </div>
                 <div class="skill-category">
-                    <h3>Herramientas & DevOps</h3>
-                    <ul class="skill-list">
-                        <li class="skill-item"><i class="fab fa-git-alt"></i> Git</li>
-                        <li class="skill-item"><i class="fab fa-github"></i> GitHub</li>
-                        <li class="skill-item"><i class="fab fa-docker"></i> Docker</li>
-                        <li class="skill-item"><i class="fab fa-microsoft"></i> Azure</li>
-                    </ul>
+                    <h3><i class="fas fa-cogs"></i> DevOps & MLOps</h3>
+                    <div class="skill-items">
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Git/GitHub</span>
+                        <span class="skill-tag">GitHub Actions</span>
+                        <span class="skill-tag">Azure</span>
+                        <span class="skill-tag">CI/CD</span>
+                    </div>
                 </div>
                 <div class="skill-category">
-                    <h3>Modelamiento de Procesos</h3>
-                    <ul class="skill-list">
-                        <li class="skill-item"><i class="fas fa-project-diagram"></i> Bizagi Modeler</li>
-                        <li class="skill-item"><i class="fas fa-sitemap"></i> BPMN 2.0</li>
-                        <li class="skill-item"><i class="fas fa-cogs"></i> Automatización de Procesos</li>
-                        <li class="skill-item"><i class="fas fa-chart-line"></i> Análisis de Procesos</li>
-                    </ul>
+                    <h3><i class="fas fa-database"></i> Bases de Datos</h3>
+                    <div class="skill-items">
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">SQL Server</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">Redis</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-project-diagram"></i> Metodologías</h3>
+                    <div class="skill-items">
+                        <span class="skill-tag">Lean Six Sigma</span>
+                        <span class="skill-tag">CRISP-DM</span>
+                        <span class="skill-tag">Agile</span>
+                        <span class="skill-tag">BPMN 2.0</span>
+                        <span class="skill-tag">Design Thinking</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section class="projects">
+    <section id="projects" class="projects">
         <div class="container">
-            <h2 class="section-title">Proyectos</h2>
+            <div class="section-title">
+                <h2>Proyectos Destacados</h2>
+                <p>Soluciones innovadoras en Data Science y Machine Learning</p>
+            </div>
+            
+            <div class="projects-filter">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="mlops">MLOps</button>
+                <button class="filter-btn" data-filter="analytics">Analytics</button>
+                <button class="filter-btn" data-filter="automation">Automatización</button>
+            </div>
+
             <div class="projects-grid">
-                <!-- Project 1 -->
-                <div class="project-card">
+                <!-- Proyecto 1: Análisis Demográfico Bogotá -->
+                <div class="project-card" data-category="analytics">
+                    <div class="project-status status-new">NUEVO JUN 2025</div>
                     <div class="project-image">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Análisis Demográfico Bogotá</h3>
+                        <p class="project-description">Sistema completo de generación de datos sintéticos, análisis demográfico y análisis de accesibilidad a centros de salud con mapas interactivos y pipeline automatizado.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">Pandas</span>
+                            <span class="project-tag">Geopandas</span>
+                            <span class="project-tag">Folium</span>
+                            <span class="project-tag">Analytics</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/ingermanr/demographic-accesibility-bogota" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i> Código
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 2: Sistema de Detección de Fraude -->
+                <div class="project-card" data-category="mlops">
+                    <div class="project-status status-recent">RECENT MAY 2025</div>
+                    <div class="project-image" style="background: var(--gradient-2);">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Sistema de Detección de Fraude</h3>
+                        <p class="project-description">Sistema MLOps completo para detección de fraude en tiempo real con pipeline automatizado de entrenamiento, validación y despliegue de modelos.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">MLOps</span>
+                            <span class="project-tag">Docker</span>
+                            <span class="project-tag">ML Pipeline</span>
+                            <span class="project-tag">Real-time</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/ingermanr/fraud_det_sys" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i> Código
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 3: Proyecto ExeDataSc -->
+                <div class="project-card" data-category="analytics">
+                    <div class="project-status status-updated">UPDATED ABR 2025</div>
+                    <div class="project-image" style="background: var(--gradient-3);">
                         <i class="fas fa-chart-line"></i>
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Proyecto ExeDataSc</h3>
-                        <p>Proyecto integral desde análisis de datos hasta modelos de ciencia de datos con implementación de pipelines de procesamiento y modelado predictivo.</p>
+                        <p class="project-description">Proyecto integral desde análisis de datos hasta ciencia de datos con implementación de pipelines de procesamiento y modelado predictivo.</p>
                         <div class="project-tags">
                             <span class="project-tag">Python</span>
                             <span class="project-tag">Jupyter</span>
                             <span class="project-tag">Pandas</span>
                             <span class="project-tag">Scikit-learn</span>
+                            <span class="project-tag">EDA</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/ingermanr/proyecto_exedatasc" class="project-link" target="_blank">Ver Proyecto</a>
+                            <a href="https://github.com/ingermanr/proyecto_exedatasc" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i> Código
+                            </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 2 -->
-                <div class="project-card">
-                    <div class="project-image">
+                <!-- Proyecto 4: Especialización en ML -->
+                <div class="project-card" data-category="mlops">
+                    <div class="project-status status-active">ACTIVE ABR 2025</div>
+                    <div class="project-image" style="background: var(--gradient-1);">
                         <i class="fas fa-brain"></i>
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Especialización en Machine Learning</h3>
-                        <p>Cuadernos y prácticas de especialización en ML con implementación de modelos avanzados de aprendizaje supervisado y no supervisado.</p>
+                        <p class="project-description">Cuadernos y prácticas avanzadas de ML con implementación de modelos de aprendizaje supervisado y no supervisado. Más de 255MB de contenido técnico.</p>
                         <div class="project-tags">
-                            <span class="project-tag">Python</span>
-                            <span class="project-tag">TensorFlow</span>
-                            <span class="project-tag">Scikit-learn</span>
                             <span class="project-tag">Jupyter</span>
+                            <span class="project-tag">Scikit-learn</span>
+                            <span class="project-tag">TensorFlow</span>
+                            <span class="project-tag">Deep Learning</span>
+                            <span class="project-tag">Research</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/ingermanr/esp_ml_ean" class="project-link" target="_blank">Ver Proyecto</a>
+                            <a href="https://github.com/ingermanr/esp_ml_ean" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i> Código
+                            </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 3 -->
-                <div class="project-card">
-                    <div class="project-image">
+                <!-- Proyecto 5: GitHub Actions -->
+                <div class="project-card" data-category="automation">
+                    <div class="project-status status-updated">UPDATED SEP 2024</div>
+                    <div class="project-image" style="background: var(--gradient-2);">
+                        <i class="fab fa-github-alt"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">GitHub Actions CI/CD</h3>
+                        <p class="project-description">Flujos de trabajo automatizados para CI/CD con GitHub Actions, incluyendo testing automatizado, deployment y integración continua para proyectos de data science.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">GitHub Actions</span>
+                            <span class="project-tag">Python</span>
+                            <span class="project-tag">CI/CD</span>
+                            <span class="project-tag">DevOps</span>
+                            <span class="project-tag">Automation</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/ingermanr/github-actions" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i> Código
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 6: Docker para ML -->
+                <div class="project-card" data-category="mlops">
+                    <div class="project-status">STABLE</div>
+                    <div class="project-image" style="background: var(--gradient-3);">
                         <i class="fab fa-docker"></i>
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Docker para Machine Learning</h3>
-                        <p>Construcción y ejecución de contenedores Docker para modelos de ML con despliegue escalable.</p>
+                        <p class="project-description">Construcción y ejecución de contenedores Docker para modelos de ML con despliegue escalable y gestión de dependencias optimizada.</p>
                         <div class="project-tags">
                             <span class="project-tag">Docker</span>
                             <span class="project-tag">Python</span>
                             <span class="project-tag">Flask</span>
-                            <span class="project-tag">ML</span>
+                            <span class="project-tag">ML Deployment</span>
+                            <span class="project-tag">Containerization</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/ingermanr/docker-machine-learning" class="project-link" target="_blank">Ver Proyecto</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 4 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fab fa-github-actions"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">GitHub Actions</h3>
-                        <p>Flujos de trabajo automatizados con GitHub Actions para proyectos de ciencia de datos.</p>
-                        <div class="project-tags">
-                            <span class="project-tag">GitHub Actions</span>
-                            <span class="project-tag">Python</span>
-                            <span class="project-tag">YAML</span>
-                            <span class="project-tag">CI/CD</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/ingermanr/github-actions" class="project-link" target="_blank">Ver Proyecto</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 5 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-trophy"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Kaggle Competitions</h3>
-                        <p>Soluciones a competencias de ciencia de datos en Kaggle con implementación de modelos competitivos.</p>
-                        <div class="project-tags">
-                            <span class="project-tag">Python</span>
-                            <span class="project-tag">Scikit-learn</span>
-                            <span class="project-tag">XGBoost</span>
-                            <span class="project-tag">Jupyter</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/ingermanr/Kaggle_competitions" class="project-link" target="_blank">Ver Proyecto</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 6 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-file-code"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Cookiecutter Personal</h3>
-                        <p>Plantillas personalizadas para proyectos de datos con estructuras estandarizadas.</p>
-                        <div class="project-tags">
-                            <span class="project-tag">Cookiecutter</span>
-                            <span class="project-tag">Python</span>
-                            <span class="project-tag">Estructura de proyectos</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://github.com/ingermanr/cookiecutter-personal" class="project-link" target="_blank">Ver Proyecto</a>
+                            <a href="https://github.com/ingermanr/docker-machine-learning" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i> Código
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -558,25 +927,93 @@
     </section>
 
     <!-- Contact Section -->
-    <section class="contact">
+    <section id="contact">
         <div class="container">
-            <h2 class="section-title">Contacto</h2>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <span>ingenierogermanr@gmail.com</span>
+            <div class="section-title">
+                <h2>¡Conectemos!</h2>
+                <p>¿Tienes un proyecto interesante? Me encantaría colaborar contigo</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3 style="margin-bottom: 2rem; color: var(--primary-color);">Información de Contacto</h3>
+                    
+                    <a href="mailto:ingenierogermanr@gmail.com" class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <strong>Email</strong><br>
+                            ingenierogermanr@gmail.com
+                        </div>
+                    </a>
+                    
+                    <a href="https://linkedin.com/in/germanalonsodriguez" target="_blank" class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <div>
+                            <strong>LinkedIn</strong><br>
+                            germanalonsodriguez
+                        </div>
+                    </a>
+                    
+                    <a href="https://github.com/ingermanr" target="_blank" class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <div>
+                            <strong>GitHub</strong><br>
+                            @ingermanr
+                        </div>
+                    </a>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <strong>Ubicación</strong><br>
+                            Medellín, Colombia 🇨🇴
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 3rem;">
+                        <h4 style="color: var(--primary-color); margin-bottom: 1rem;">Sígueme en</h4>
+                        <div class="social-links">
+                            <a href="https://linkedin.com/in/germanalonsodriguez" target="_blank" class="social-link">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="https://github.com/ingermanr" target="_blank" class="social-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://kaggle.com/germanrodriguezdiaz" target="_blank" class="social-link">
+                                <i class="fab fa-kaggle"></i>
+                            </a>
+                            <a href="mailto:ingenierogermanr@gmail.com" class="social-link">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="contact-item">
-                    <i class="fab fa-linkedin"></i>
-                    <a href="https://linkedin.com/in/germandsp" target="_blank">linkedin.com/in/germandsp</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-github"></i>
-                    <a href="https://github.com/ingermanr" target="_blank">github.com/ingermanr</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fab fa-kaggle"></i>
-                    <a href="https://kaggle.com/germanrodriguezdiaz" target="_blank">kaggle.com/germanrodriguezdiaz</a>
+
+                <div class="contact-form">
+                    <div style="background: var(--card-bg); padding: 3rem; border-radius: 20px; border: 1px solid var(--border-color); text-align: center;">
+                        <i class="fas fa-rocket" style="font-size: 4rem; color: var(--primary-color); margin-bottom: 2rem;"></i>
+                        <h3 style="margin-bottom: 1rem; color: var(--text-primary);">¿Listo para colaborar?</h3>
+                        <p style="color: var(--text-secondary); margin-bottom: 2rem; line-height: 1.6;">
+                            Estoy disponible para proyectos de Data Science, Machine Learning y MLOps. 
+                            Ya sea que necesites análisis de datos, desarrollo de modelos predictivos o 
+                            implementación de pipelines de ML, ¡hablemos!
+                        </p>
+                        
+                        <div style="background: var(--dark-bg); padding: 2rem; border-radius: 15px; margin: 2rem 0; border: 1px solid var(--border-color);">
+                            <h4 style="color: var(--accent-color); margin-bottom: 1rem;">Especialidades</h4>
+                            <ul style="list-style: none; color: var(--text-secondary); line-height: 2;">
+                                <li>📊 Análisis Demográfico y Geoespacial</li>
+                                <li>🛡️ Sistemas de Detección de Fraude</li>
+                                <li>🔄 MLOps y CI/CD para ML</li>
+                                <li>🐳 Containerización y Deployment</li>
+                                <li>📈 Automatización de Procesos</li>
+                            </ul>
+                        </div>
+                        
+                        <a href="mailto:ingenierogermanr@gmail.com" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i>
+                            Enviar Email
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -586,17 +1023,146 @@
     <footer>
         <div class="container">
             <p>&copy; 2025 Germán Alonso Rodríguez Díaz. Todos los derechos reservados.</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem;">
+                Hecho con <i class="fas fa-heart" style="color: #EF4444;"></i> desde Medellín, Colombia
+            </p>
         </div>
     </footer>
 
     <script>
-        // Scroll smooth para los links internos
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
+        // Typing animation
+        const typingText = document.getElementById('typing-text');
+        const phrases = [
+            'Especialista en MLOps y Analytics 🤖',
+            'Desarrollador de Pipelines de ML 🔄',
+            'Analista de Datos Geoespaciales 🗺️',
+            'Automatización de Procesos 🚀',
+            'Machine Learning Engineer 🧠'
+        ];
+        
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        
+        function typeText() {
+            const currentPhrase = phrases[phraseIndex];
+            
+            if (isDeleting) {
+                typingText.textContent = currentPhrase.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingText.textContent = currentPhrase.substring(0, charIndex + 1);
+                charIndex++;
+            }
+            
+            if (!isDeleting && charIndex === currentPhrase.length) {
+                setTimeout(() => isDeleting = true, 2000);
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+            }
+            
+            const typingSpeed = isDeleting ? 50 : 100;
+            setTimeout(typeText, typingSpeed);
+        }
+        
+        // Start typing animation
+        typeText();
+        
+        // Particles animation
+        function createParticles() {
+            const particlesContainer = document.querySelector('.particles');
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.width = Math.random() * 4 + 2 + 'px';
+                particle.style.height = particle.style.width;
+                particle.style.animationDelay = Math.random() * 6 + 's';
+                particle.style.animationDuration = (Math.random() * 4 + 4) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
+        
+        createParticles();
+        
+        // Projects filter
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                const filter = btn.getAttribute('data-filter');
+                
+                projectCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'block';
+                        card.style.animation = 'fadeInUp 0.6s ease-out';
+                    } else {
+                        card.style.display = 'none';
+                    }
                 });
+            });
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(15, 23, 42, 0.98)';
+                navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                navbar.style.background = 'rgba(15, 23, 42, 0.95)';
+                navbar.style.boxShadow = 'none';
+            }
+        });
+        
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-up');
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+        
+        // Add hover effects to skill tags
+        document.querySelectorAll('.skill-tag').forEach(tag => {
+            tag.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-2px) scale(1.05)';
+            });
+            
+            tag.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
             });
         });
     </script>
